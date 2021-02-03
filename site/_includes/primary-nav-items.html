@@ -1,0 +1,27 @@
+<!-- _includes/primary-nav-items.html -->
+<ul>
+  <li class="{% if page.url contains '/getting-started/' %}current{% endif %}">
+    <a href="{{ "/getting-started/getting-started.php" | prepend: page.tutorialtype | prepend: "/" | prepend: base }}">Getting Started</a>
+  </li>
+  <li class="{% if page.url contains '/tutorial/' %}current{% endif %}">
+    {% if page.url contains '/awsjamlounge/' %}
+    <a href="{{ "/tutorial/no-tutorial.php" | prepend: page.tutorialtype | prepend: "/" | prepend: base }}">Tutorial</a>
+    {% else %}
+    <a href="{{ "/tutorial/db-mysql-source.php" | prepend: page.tutorialtype | prepend: "/" | prepend: base }}">Tutorial</a>
+    {% endif %}
+  </li>
+  <li class="{% if page.url contains '/resources/' %}current{% endif %}">
+    <a href="{{ "/resources/resources.php" | prepend: page.tutorialtype | prepend: "/" | prepend: base }}">Resources</a>
+  </li>
+  <li class="">
+    {% if page.url contains '/snowflake/' %}
+    <a target="_blank" rel="noopener noreferrer" href="https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000j5hi">Contact Us</a>
+    {% endif %}
+    {% if page.url contains '/databricks/' %}
+    <a target="_blank" rel="noopener noreferrer" href="https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000jSeg">Contact Us</a>
+    {% endif %}
+    {% if page.url contains '/replicate/' %}
+    <a target="_blank" rel="noopener noreferrer" href="https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000ivTR">Contact Us</a>
+    {% endif %}
+  </li>
+</ul>

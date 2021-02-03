@@ -1,0 +1,22 @@
+<!-- _includes/tutorial_contents.html -->
+<div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    {% case page.tutorialtype %}
+      {% when 'replicate' %}
+         {% assign tutorial = site.data.replicate %}
+      {% when 'snowflake' %}
+         {% assign tutorial = site.data.snowflake %}
+      {% when 'databricks' %}
+         {% assign tutorial = site.data.databricks %}
+      {% when 'awsjamlounge' %}
+         {% assign tutorial = site.data.awsjamlounge %}
+      {% else %}
+         {% assign tutorial = site.data.replicate %}
+    {% endcase %}
+
+    {% for section in tutorial %}
+    <h4>{{ section.title }}</h4>
+    {% include tutorial_ul.html items=section.tutorial %}
+    {% endfor %}
+  </aside>
+</div>

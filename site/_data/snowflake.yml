@@ -1,0 +1,12 @@
+- title: Delivering Data to Snowflake
+  tutorial:
+  - db-mysql-source
+  - snowflake-target
+  - config-task
+  - config-xform
+  - run-task
+  - summary
+- title: Data Warehouse Automation
+  tutorial:
+  - compose-info
+

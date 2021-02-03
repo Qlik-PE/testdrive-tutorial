@@ -1,0 +1,31 @@
+{% include is_logged_in.php %}
+<!DOCTYPE html>
+<html>
+  {% include base.html %}
+  {% include head.html %}
+
+  <body>
+
+    {% include no-nav.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        <section class="tutorial">
+          <div class="grid">
+            <div class="unit whole">
+              <article>
+                <h2>{{ page.title }}</h2>
+                {{ content }}
+              </article>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

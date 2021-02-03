@@ -1,0 +1,12 @@
+# jekyll artifacts
+_site
+.sass-cache
+.jekyll-metadata
+.jekyll-cache
+
+# other stuff
+.*.swp
+*.rpm
+*.tgz
+generated/
+

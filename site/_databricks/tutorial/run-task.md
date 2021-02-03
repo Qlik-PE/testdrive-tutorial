@@ -1,0 +1,65 @@
+---
+title: Step 7 - Run Your Task
+section: Delivering Data to Databricks
+tutorialtype: databricks
+permalink: /databricks/tutorial/run-task.php
+---
+
+After you press `Run`, Replicate will automatically switch from **Designer** mode to **Monitor** mode. 
+You will be able to watch the status of the full load as it occurs, and then switch to monitoring 
+change data capture as well.
+
+![Run Task 1 Image]({{ "/images/databricks/run-task-1.png" | prepend: base }}){: .center-image }
+
+When **Full Load** is complete, click on the `Completed` bar to display the tables. 
+
+![Run Task 2 Image]({{ "/images/databricks/run-task-2.png" | prepend: base }}){: .center-image }
+
+
+There is DML activity running in the background. Click on the `Change Processing` tab to 
+see it in action.
+
+![Run Task 3 Image]({{ "/images/databricks/run-task-3.png" | prepend: base }}){: .center-image }
+
+When you have seen enough, press `Stop` in the top left corner of the window to end the task. 
+After pressing `Stop` and clicking `Yes` in the confirmation dialog, 
+close the MySQL-to-Databricks tab or click on the TASKS tab to return to the main window.
+
+![Run Task 4 Image]({{ "/images/databricks/run-task-4.png" | prepend: base }}){: .center-image }
+
+
+If you would like to explore the data that we have delviered to Databricks, you
+can view the tables in the Databricks Console.
+
+Select `Data` from the left side of the screen.
+
+![Databricks Data 1 Image]({{ "/images/databricks/databricks-data-1.png" | prepend: base }}){: .center-image }
+
+Select the database we are writing to:
+
+![Databricks Data 2 Image]({{ "/images/databricks/databricks-data-2.png" | prepend: base }}){: .center-image }
+
+Now select the `player` table.
+
+![Databricks Data 3 Image]({{ "/images/databricks/databricks-data-3.png" | prepend: base }}){: .center-image }
+
+If you scroll down to 'Sample Data' and scroll all the way to the right, you will see the 
+_fullName_ column that we created in the transformation.
+
+Now go back and select the `player__ct` table. 'ct' stands for "change table". This is 
+the table that we mentioned earlier that is similar in nature to a table that maps a
+type-2 slowly changing dimension. This is where INSERT/UPDATE/DELETE operations that occur
+after the full load completes get written. You will see that the structure is very similar
+to the structure of the _player_ table, but with the addition of a number of "header" columns
+that contain information pertinent to the operation that occurred (operation, timestamp, etc.).
+
+![Databricks Data 4 Image]({{ "/images/databricks/databricks-data-4.png" | prepend: base }}){: .center-image }
+
+Feel free to explore the structure, etc. associated with the tables we have created. 
+Please note, though, that while change tables were created for every table, real-time changes 
+only occurred on a subset of the tables. Most of the change tables will report that they are
+empty.
+
+Now that we have our change data streaming into Databricks, you are probably wondering about
+how to make that data analytics-ready. Click `Next` below to get an answer to that question.
+

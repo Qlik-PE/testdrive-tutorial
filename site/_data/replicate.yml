@@ -1,0 +1,15 @@
+- title: Database-to-Database Replication
+  tutorial:
+  - db-mysql-source
+  - db-postgres-target
+  - db-config-task
+  - db-config-xform
+  - db-run-task
+
+- title: Streaming Data to Kafka 
+  tutorial:
+  - kafka-mysql-source
+  - kafka-target
+  - kafka-config-task
+  - kafka-run-task
+

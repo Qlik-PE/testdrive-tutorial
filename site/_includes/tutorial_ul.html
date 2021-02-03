@@ -1,0 +1,21 @@
+<!-- _includes/tutorial_ul.html -->
+<ul>
+{% for item in include.items %}
+  {% assign item_url = item | prepend: "/tutorial/" | prepend: page.tutorialtype | prepend: "/" | append:".php" %}
+  {% case page.tutorialtype %}
+     {% when 'replicate' %}
+       {% assign p = site.replicate | where: "url", item_url | first %}
+     {% when 'snowflake' %}
+       {% assign p = site.snowflake | where: "url", item_url | first %}
+     {% when 'databricks' %}
+       {% assign p = site.databricks | where: "url", item_url | first %}
+     {% when 'awsjamlounge' %}
+       {% assign p = site.awsjamlounge | where: "url", item_url | first %}
+     {% else %}
+       {% assign p = site.replicate | where: "url", item_url | first %}
+   {% endcase %}
+
+
+  <li class="{% if item_url == page.url %}current{% endif %}"><a href="{{ p.url | prepend: base }}">{{ p.title }}</a></li>
+{% endfor %}
+</ul>

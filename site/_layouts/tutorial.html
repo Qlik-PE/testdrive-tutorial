@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+  <section class="tutorial">
+    <div class="grid">
+
+      {% include tutorial_contents_mobile.html %}
+
+      <div class="unit four-fifths">
+        <article>
+          {% include section_nav.html %}
+          <h2>{{ page.section }}</h2>
+          <h3>{{ page.title }}</h3>
+          {{ content }}
+          {% include section_nav.html %}
+        </article>
+      </div>
+
+      {% include tutorial_contents.html %}
+
+      <div class="clear"></div>
+
+    </div>
+  </section>

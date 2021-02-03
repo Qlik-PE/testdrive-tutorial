@@ -1,0 +1,24 @@
+<!-- _includes/tutorial_contents_mobile.html -->
+<div class="tutorial-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the tutorial…</option>
+   {% case page.tutorialtype %}
+      {% when 'replicate' %}
+         {% assign tutorial = site.data.replicate %}
+      {% when 'snowflake' %}
+         {% assign tutorial = site.data.snowflake %}
+      {% when 'databricks' %}
+         {% assign tutorial = site.data.databricks %}
+      {% when 'awsjamlounge' %}
+         {% assign tutorial = site.data.awsjamlounge %}
+      {% else %}
+         {% assign tutorial = site.data.replicate %}
+    {% endcase %}
+
+    {% for section in tutorial %}
+    <optgroup label="{{ section.title }}">
+      {% include tutorial_option.html items=section.tutorial %}
+    </optgroup>
+    {% endfor %}
+  </select>
+</div>

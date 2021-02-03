@@ -1,0 +1,14 @@
+- title: Delivering Data to Databricks
+  tutorial:
+  - db-mysql-source
+  - config-adlsgen2
+  - config-databricks
+  - databricks-target
+  - config-task
+  - config-xform
+  - run-task
+  - summary
+- title: Delivering Data to Delta Lake
+  tutorial:
+  - compose-info
+

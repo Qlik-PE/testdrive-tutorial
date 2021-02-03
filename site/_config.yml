@@ -1,0 +1,54 @@
+#
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Qlik Solution Test Drive 
+description: Test Drive of Qlik Data Integration Solutions
+
+url: "" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /mygithubproject
+repository: ""
+
+# Build settings
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: "_replicate/tutorial"
+      type: "replicate"
+    values:
+      layout: "tutorial"
+  - scope:
+      path: "_snowflake/tutorial"
+      type: "snowflake"
+    values:
+      layout: "tutorial"
+  - scope:
+      path: "_databricks/tutorial"
+      type: "databricks"
+    values:
+      layout: "tutorial"
+  - scope:
+      path: "_awsjamlounge/tutorial"
+      type: "awsjamlounge"
+    values:
+      layout: "tutorial"
+
+
+collections:
+  replicate:
+    permalink: /:collection/:path/
+    output: true
+  snowflake:
+    permalink: /:collection/:path/
+    output: true
+  databricks:
+    permalink: /:collection/:path/
+    output: true
+  awsjamlounge:
+    permalink: /:collection/:path/
+    output: true
+

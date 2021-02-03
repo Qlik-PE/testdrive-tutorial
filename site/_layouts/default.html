@@ -1,0 +1,21 @@
+{% include is_logged_in.php %}
+<!DOCTYPE html>
+<html>
+  {% include base.html %}
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+          {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

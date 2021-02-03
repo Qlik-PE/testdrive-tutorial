@@ -1,0 +1,19 @@
+<!-- _includes/tutorial_option.html -->
+{% for item in include.items %}
+  {% assign item_url = item | prepend: "/tutorial/" | prepend: page.tutorialtype | prepend: "/" | append:".php" %}
+  {% case page.tutorialtype %}
+     {% when 'replicate' %}
+       {% assign doc = site.replicate | where: "url", item_url | first %}
+     {% when 'snowflake' %}
+       {% assign doc = site.snowflake | where: "url", item_url | first %}
+     {% when 'databricks' %}
+       {% assign doc = site.databricks | where: "url", item_url | first %}
+     {% when 'awsjamlounge' %}
+       {% assign doc = site.awsjamlounge | where: "url", item_url | first %}
+     {% else %}
+       {% assign doc = site.replicate | where: "url", item_url | first %}
+   {% endcase %}
+
+
+  <option value="{{ base }}{{ item_url }}">{{ doc.title }}</option>
+{% endfor %}
