@@ -9,6 +9,6 @@ html:
 	jekyll build --source $(jekyll_src) --destination $(jekyll_trg) --trace
 
 install: build
-	sudo rm -rf /var/www/*
-	sudo cp -R install/www/* /var/www
+	sudo rm -rf /var/www/html/*
+	sudo cp -R $(jekyll_trg)/* /var/www/html
 	sudo chown -R apache:apache /var/www/*
