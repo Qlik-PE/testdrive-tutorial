@@ -1,0 +1,13 @@
+- title: Delivering Data into Microsoft Azure Synapse Analytics
+  tutorial:
+  - db-mysql-source
+  - config-adlsgen2
+  - synapse-target
+  - config-task
+  - config-xform
+  - run-task
+  - summary
+- title: Data Warehouse Automation
+  tutorial:
+  - compose-info
+

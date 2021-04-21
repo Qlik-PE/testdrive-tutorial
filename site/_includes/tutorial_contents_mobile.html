@@ -11,6 +11,8 @@
          {% assign tutorial = site.data.databricks %}
       {% when 'awsjamlounge' %}
          {% assign tutorial = site.data.awsjamlounge %}
+      {% when 'synapse' %}
+         {% assign tutorial = site.data.synapse %}
       {% else %}
          {% assign tutorial = site.data.replicate %}
     {% endcase %}

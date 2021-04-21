@@ -13,6 +13,8 @@ the items to a comma delimited string. Split turns it into an array again.
      {% assign tutorial = site.data.databricks | map: 'tutorial' | join: ',' | split: ',' %}
   {% when 'awsjamlounge' %}
      {% assign tutorial = site.data.awsjamlounge | map: 'tutorial' | join: ',' | split: ',' %}
+  {% when 'synapse' %}
+     {% assign tutorial = site.data.synapse | map: 'tutorial' | join: ',' | split: ',' %}
   {% else %}
      {% assign tutorial = site.data.replicate | map: 'tutorial' | join: ',' | split: ',' %}
 {% endcase %}

@@ -10,6 +10,8 @@
        {% assign doc = site.databricks | where: "url", item_url | first %}
      {% when 'awsjamlounge' %}
        {% assign doc = site.awsjamlounge | where: "url", item_url | first %}
+     {% when 'synapse' %}
+       {% assign doc = site.synapse | where: "url", item_url | first %}
      {% else %}
        {% assign doc = site.replicate | where: "url", item_url | first %}
    {% endcase %}

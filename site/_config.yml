@@ -36,6 +36,11 @@ defaults:
       type: "awsjamlounge"
     values:
       layout: "tutorial"
+  - scope:
+      path: "_synapse/tutorial"
+      type: "synapse"
+    values:
+      layout: "tutorial"
 
 
 collections:
@@ -49,6 +54,9 @@ collections:
     permalink: /:collection/:path/
     output: true
   awsjamlounge:
+    permalink: /:collection/:path/
+    output: true
+  synapse:
     permalink: /:collection/:path/
     output: true
 

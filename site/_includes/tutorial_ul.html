@@ -11,6 +11,8 @@
        {% assign p = site.databricks | where: "url", item_url | first %}
      {% when 'awsjamlounge' %}
        {% assign p = site.awsjamlounge | where: "url", item_url | first %}
+     {% when 'synapse' %}
+       {% assign p = site.synapse | where: "url", item_url | first %}
      {% else %}
        {% assign p = site.replicate | where: "url", item_url | first %}
    {% endcase %}
