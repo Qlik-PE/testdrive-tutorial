@@ -10,5 +10,5 @@ html:
 
 install: build
 	sudo rm -rf /var/www/html/*
-	sudo cp -R generated/* /var/www/html
-	sudo chown -R apache:apache /var/www/html/*
+	sudo cp -R $(jekyll_trg)/* /var/www/html
+	sudo chown -R apache:apache /var/www/html
