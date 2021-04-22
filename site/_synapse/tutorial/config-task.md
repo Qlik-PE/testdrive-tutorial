@@ -76,7 +76,7 @@ and from there select the `synapse` schema.
 ![Select Tables 2 Image]({{ "/images/synapse/select-tables-2.png" | prepend: base }}){: .center-image }
 
 Enter `%` where it says **Table:** and press the `Search` button. This will retrieve a list of 
-all the tables in the _synapse_ schema.
+all the tables in the _testdrive_ schema.
 
 > Note: entering `%` is not strictly required. By default, Qlik Replicate will search for all 
 tables (`%`) if you do not limit the search.

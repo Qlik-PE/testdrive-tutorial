@@ -90,7 +90,7 @@ having to click into it. Press `OK` again to return to the previous screen.
 
 ![Transform 13 Image]({{ "/images/synapse/xform-13.png" | prepend: base }}){: .center-image }
 
-Notice the word **(Changed)** next to the _synapse.Player_ column. This indicates that
+Notice the word **(Changed)** next to the _testdrive.Player_ column. This indicates that
 a transformation has been defined that alters the state of the data as it moves from the
 source to the target.
 
