@@ -29,7 +29,7 @@ close the MySQL-to-Synapse tab or click on the TASKS tab to return to the main w
 
 
 If you would like to explore the data that we have delviered to Azure Synapse, you
-can view the tables in the Azure Synapse Console.
+can view the tables in the Azure Synapse Studio.
 
 Select `Data` from the left side of the screen.
 
@@ -39,19 +39,21 @@ Select the database we are writing to:
 
 ![Synapse Data 2 Image]({{ "/images/synapse/synapse-data-2.png" | prepend: base }}){: .center-image }
 
-Now select the `player` table.
+and expand `Tables`.
+
+![Synapse Data 2a Image]({{ "/images/synapse/synapse-data-2a.png" | prepend: base }}){: .center-image }
+
+Now select the ellipsis `...` (Actions) next to the `player` table.
 
 ![Synapse Data 3 Image]({{ "/images/synapse/synapse-data-3.png" | prepend: base }}){: .center-image }
 
-If you scroll down to 'Sample Data' and scroll all the way to the right, you will see the 
-_fullName_ column that we created in the transformation.
+and select `New SQL script > Select TOP 100 rows`.
 
-Now go back and select the `player__ct` table. 'ct' stands for "change table". This is 
-the table that we mentioned earlier that is similar in nature to a table that maps a
-type-2 slowly changing dimension. This is where INSERT/UPDATE/DELETE operations that occur
-after the full load completes get written. You will see that the structure is very similar
-to the structure of the _player_ table, but with the addition of a number of "header" columns
-that contain information pertinent to the operation that occurred (operation, timestamp, etc.).
+![Synapse Data 3a Image]({{ "/images/synapse/synapse-data-3a.png" | prepend: base }}){: .center-image }
+
+
+If you scroll all the way to the right in the results window, you will see the
+_fullName_ column that we created in the transformation.
 
 ![Synapse Data 4 Image]({{ "/images/synapse/synapse-data-4.png" | prepend: base }}){: .center-image }
 
@@ -60,7 +62,7 @@ Please note, though, that while change tables were created for every table, real
 only occurred on a subset of the tables. Most of the change tables will report that they are
 empty.
 
-Now that we have our change data streaming into Azure Synapse Analytics, you are probably 
+Now that we have our change data streaming into Microsoft Azure Synapse Analytics, you are probably 
 wondering about
 how to make that data analytics-ready. Click `Next` below to get an answer to that question.
 

@@ -1,4 +1,5 @@
 {% raw %} 
+<p> Placeholder for creds to be sent from Synapse Parther Connect. </p>
 <ul>
   <li>Synapse URL: 
     <code class="highlighter-rouge"><?php echo 'your synapse host'; ?></code>

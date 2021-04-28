@@ -30,18 +30,13 @@ Replicate supports two approaches to managing change data:
 * _Store Changes_, which writes the data in a format that somewhat resembles a type-2 slowly changing
 dimension and effectively allows records to be post-processed in order.
 
-For the Azure Synapse Analytics target endpoint, the notion of processing a DELETE or UPDATE does not 
-really apply because the "tables" that we are writing to are actually files, very similar
-in fact to how Hadoop/Hive manage tables. Consequently, for Azure Synapse Analytics we need to disable 
-`Apply Changes` and select `Store Changes` instead.
-
 For this task we will configure as follows:
 
 * Name: `MySQL-to-Synapse`
 * `Unidirectional`
 * Full Load: `enabled` _(Blue highlight is enabled; click to enable / disable.)_
-* Apply Changes: `disabled` _(Blue highlight is enabled; click to enable / disable.)_
-* Store Changes: `enabled` _(Blue highlight is enabled; click to enable / disable.)_
+* Apply Changes: `enabled` _(Blue highlight is enabled; click to enable / disable.)_
+* Store Changes: `disabled` _(Blue highlight is enabled; click to enable / disable.)_
 
 ![Create Task 2a Image]({{ "/images/synapse/create-task-2a.png" | prepend: base }}){: .center-image }
 
@@ -71,7 +66,7 @@ Azure Synapse Analytics. Click on the `Table Selection...` button in the top cen
 
 ![Select Tables 1 Image]({{ "/images/synapse/select-tables-1.png" | prepend: base }}){: .center-image }
 
-and from there select the `synapse` schema.
+and from there select the `testdrive` schema.
 
 ![Select Tables 2 Image]({{ "/images/synapse/select-tables-2.png" | prepend: base }}){: .center-image }
 
@@ -88,5 +83,7 @@ and then press the `>>` button to move all of the tables from the **Results** li
 selectively choosing tables from the **Results** list.
 
 ![Select Tables 4 Image]({{ "/images/synapse/select-tables-4.png" | prepend: base }}){: .center-image }
+
+We are done with this step; press `OK` to go back to the main screen.
 
 In the next step we will configure a transformation on some of the data.

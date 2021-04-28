@@ -22,7 +22,7 @@ From your Azure portal home page, click on `Storage Accounts`.
 
 ![Azure ADLS Config 1 Image]({{ "/images/synapse/azure-adls2-config-1.png" | prepend: base }}){: .center-image }
 
-and click `+ Add`:
+and click `+ Create`:
 
 ![Azure ADLS Config 2 Image]({{ "/images/synapse/azure-adls2-config-2.png" | prepend: base }}){: .center-image }
 
@@ -36,11 +36,15 @@ take the default:
 and click `Next: Networking` at the bottom of the page.
 
 For this tutorial, we want to follow the path of least resistance from a security perspective,
-so choose the radio button `Public endpoint (all networks)`. 
+so choose the radio button `Public endpoint (all networks)` and leave **Network Routing**
+as the default `Microsoft network routing`. 
 
 ![Azure ADLS Config 4 Image]({{ "/images/synapse/azure-adls2-config-4.png" | prepend: base }}){: .center-image }
 
-and click `Next: Advanced` at the bottom of the page.
+and click `Next: Data Protection` at the bottom of the page.
+
+There is nothing to do on the **Data Protection** tab for the purposes
+of these exercises, so click `Next: Advanced` at the bottom of the page.
 
 On the `Advanced` tab, we want to be sure that Data Lake Storage Gen2 "Hierarchical namespace" is
 `Enabled`.
@@ -121,15 +125,15 @@ to return to the Azure Portal home page and then drill in to get back to the
 storage account we created.
 
 First, we need to create a "file system" for us to use for the tutorial. Select `Containers`
-on the left side of the storage account screen.
+on the left side of the storage account screen under the heading **Data Lake Storage**.
 
 ![Azure ADLS Config 18 Image]({{ "/images/synapse/azure-adls2-config-18.png" | prepend: base }}){: .center-image }
 
-and then select `+ File system` at the top of the page.
+and then select `+ Container` at the top of the page.
 
 ![Azure ADLS Config 19 Image]({{ "/images/synapse/azure-adls2-config-19.png" | prepend: base }}){: .center-image }
 
-Enter a name for the file system and press `OK` to save it.
+Enter a name for the container and press `Create` to save it.
 
 ![Azure ADLS Config 20 Image]({{ "/images/synapse/azure-adls2-config-20.png" | prepend: base }}){: .center-image }
 
@@ -138,14 +142,14 @@ registered previously. Click on `Access control (IAM)` on the left side of the p
 
 ![Azure ADLS Config 21 Image]({{ "/images/synapse/azure-adls2-config-21.png" | prepend: base }}){: .center-image }
 
-Click on "Add a role assignment".
+Click on "Add role assignments".
 
 ![Azure ADLS Config 22 Image]({{ "/images/synapse/azure-adls2-config-22.png" | prepend: base }}){: .center-image }
 
 and on the right side of the screen select:
 
 * *Role*: `Storage Blob Data Contributor`
-* *Assign access to*: `Azure AD user, group, or service principal
+* *Assign access to*: `Azure User, group, or service principal
 * *Select*: enter the name of the App you registered previously.
 
 and press `Save` at the bottom of the page.
@@ -164,7 +168,7 @@ To get started, go to your ADLS-2 storage account and click on `Storage Explorer
 
 ![Azure ADLS Config 24 Image]({{ "/images/synapse/azure-adls2-config-24.png" | prepend: base }}){: .center-image }
 
-From there click on `> FILE SYSTEMS` to expand it and select the file system you are
+From there click on `> CONTAINERS` to expand it and select the container you are
 using for this tutorial.
 
 ![Azure ADLS Config 25 Image]({{ "/images/synapse/azure-adls2-config-25.png" | prepend: base }}){: .center-image }
@@ -179,6 +183,6 @@ and then enter a Folder Name and press `OK`.
 
 ![Azure ADLS Config 28 Image]({{ "/images/synapse/azure-adls2-config-28.png" | prepend: base }}){: .center-image }
 
-In the next section we will configure Azure Synapse Analytics to make use of this storage 
+In the next section we will configure Microsoft Azure Synapse Analytics to make use of this storage 
 and make it ready to ingest data delivered by Replicate.
 

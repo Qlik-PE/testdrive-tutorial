@@ -34,6 +34,52 @@ from the dropdown selection box.
 
 ![Synapse Azure 1 Image]({{ "/images/synapse/synapse-azure-1.png" | prepend: base }}){: .center-image }
 
+
+#### Azure Synapse Analytics Access Configuration 
+
+Before we get started, you will first need to override the ODBC driver name on the **Advanced**
+tab on the configuration screen.
+
+
+![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-odbc-config.png" | prepend: base }}){: .center-image }
+
+Next we need to configure the connection to our Microsoft Azure Synapse Analytics database.
+
+![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-server-config.png" | prepend: base }}){: .center-image }
+
+Fill in the blanks with information pertaining to your Microsoft Azure Synapse Analytics instance.
+
+* **Server name**: The name of the *Dedicated SQL endpoint* for your Azure Synapse Analytics instance.
+Qlik Replicate does not support acessing the "Serverless SQL endpont".
+* **Authentication method**: `SQL Authentication`. *Active Directory Authentication* is not 
+supported from Linux-based hosts.
+* **Port**: the port number that your Azure Synapse instance is listening on. The default is `1433`.
+* **Username**: the user name that you want Qlik Replicate to use to access Azure Synapse. Note
+that this user must have the necessary privileges as described in the 
+[Qlik Replicate User Guide](/files/Qlik_Replicate_User_Guide.pdf){:target="_blank"}.
+* **Password**: the password for the user you specified.
+* **Database name**: the name of a **Dedicated SQL Pool** that has been created in your
+Microsoft Azure Synapse Analytics instance. As mentioned above, Qlik Replicate does not 
+support accessing the Serverless SQL endpoint which obviously also includes the built-in 
+Serverless SQL Pool.
+* During a replication task, Microsoft Azure Synapse Analytics authenticates itself to the
+external data source using an SQL Server Credential. You can either configure Replicate to
+create the Credential automatically during runtime (the default) or use an existing Credential. 
+In this tutorial, we are going to manually configure a credential for Qlik Replicate to use.
+  - `Uncheck` *Automatically create SQL Server credential*
+  - Launch the Synapse Studio from the Azure Portal
+![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-launch-studio.png" | prepend: base }}){: .center-image }
+  - Create a new SQL Script 
+![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-sql-script.png" | prepend: base }}){: .center-image }
+  - Enter and Run the following statements:
+    + `CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'somepassword';`
+    + `CREATE DATABASE SCOPED CREDENTIAL ATTU_REP_MSI_cred WITH IDENTITY = 'Managed Service Identity';`
+Be sure you connect to the correct dedicated SQL pool.
+![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-sql-run.png" | prepend: base }}){: .center-image }
+
+
+{% include getSynapseCreds.php %}
+
 #### Azure Storage Configuration 
 
 To optimize delivery into the Azure Synapse Analytics environment, Replicate delivers change data in a
@@ -58,10 +104,11 @@ Azure subscription. We worked through how to configure and obtain this informati
 in the previous 'Configure Azure Data Lake Gen2 Storage' section.
 
 * **Storage account**: specify the name of your ADLS Gen2 storage account
+* **File System**: the ADLS Gen2 Container containing your folders and files
 * **Azure Active Directory ID**: specify your Azure Active Directory (tenant) ID 
 * **Azure Active Directory application ID**: specify the Azure Active Directory application (client) ID
 * **Azure Active Directory application key**: specify the Azure Active Directory application (client) key
-* **File System**: the ADLS Gen2 file system containing your folders and files
+* **Access key**: the storage account access key
 * **Target folder**: the folder where we want Replicate to create the data files on ADLS
    > Note: if you specify a folder that does not exist, Replicate will create it for you. You
     may also press `Browse` to find directories in your file system that you may choose from. If 
@@ -70,15 +117,6 @@ in the previous 'Configure Azure Data Lake Gen2 Storage' section.
 
 ![Synapse Azure adlsGen2 Config 2 Image]({{ "/images/synapse/synapse-azure-adlsGen2-config-2.png" | prepend: base }}){: .center-image }
 
-
-
-#### Azure Synapse Analytics Access Configuration 
-
-![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-odbc-config.png" | prepend: base }}){: .center-image }
-
-Fill in the blanks with information pertaining to your Microsoft Azure Synapse Analytics Instance.
-
-{% include getSynapseCreds.php %}
 
 
 #### Test and Save
