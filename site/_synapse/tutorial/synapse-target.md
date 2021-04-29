@@ -45,7 +45,7 @@ tab on the configuration screen.
 
 Next we need to configure the connection to our Microsoft Azure Synapse Analytics database.
 
-![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-server-config.png" | prepend: base }}){: .center-image }
+![Synapse Azure Server Config Image]({{ "/images/synapse/synapse-azure-server-config.png" | prepend: base }}){: .center-image }
 
 Fill in the blanks with information pertaining to your Microsoft Azure Synapse Analytics instance.
 
@@ -66,7 +66,6 @@ Serverless SQL Pool.
 external data source using an SQL Server Credential. You can either configure Replicate to
 create the Credential automatically during runtime (the default) or use an existing Credential. 
 In this tutorial, we are going to manually configure a credential for Qlik Replicate to use.
-  - `Uncheck` *Automatically create SQL Server credential*
   - Launch the Synapse Studio from the Azure Portal
 ![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-launch-studio.png" | prepend: base }}){: .center-image }
   - Create a new SQL Script 
@@ -76,6 +75,11 @@ In this tutorial, we are going to manually configure a credential for Qlik Repli
     + `CREATE DATABASE SCOPED CREDENTIAL ATTU_REP_MSI_cred WITH IDENTITY = 'Managed Service Identity';`
 Be sure you connect to the correct dedicated SQL pool.
 ![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-sql-run.png" | prepend: base }}){: .center-image }
+  - Now return to the Qlik Replicate GUI and enter:
+    + **Automatically create SQL Server credential**: `clear the check mark on this field`
+    + **Use existing SQL Server credential**:  `ATTU_REP_MSI_cred` which is the name of the credential
+that we created above.
+![Synapse Azure Server Cred Image]({{ "/images/synapse/synapse-azure-server-cred.png" | prepend: base }}){: .center-image }
 
 
 {% include getSynapseCreds.php %}
