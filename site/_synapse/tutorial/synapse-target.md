@@ -47,6 +47,8 @@ Next we need to configure the connection to our Microsoft Azure Synapse Analytic
 
 ![Synapse Azure Server Config Image]({{ "/images/synapse/synapse-azure-server-config.png" | prepend: base }}){: .center-image }
 
+{% include getSynapseCreds.php %}
+
 Fill in the blanks with information pertaining to your Microsoft Azure Synapse Analytics instance.
 
 * **Server name**: The name of the *Dedicated SQL endpoint* for your Azure Synapse Analytics instance.
@@ -80,9 +82,6 @@ Be sure you connect to the correct dedicated SQL pool.
     + **Use existing SQL Server credential**:  `ATTU_REP_MSI_cred` which is the name of the credential
 that we created above.
 ![Synapse Azure Server Cred Image]({{ "/images/synapse/synapse-azure-server-cred.png" | prepend: base }}){: .center-image }
-
-
-{% include getSynapseCreds.php %}
 
 #### Azure Storage Configuration 
 

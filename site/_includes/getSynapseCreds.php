@@ -1,20 +1,38 @@
 {% raw %} 
-<p> Placeholder for creds to be sent from Synapse Parther Connect. </p>
+<?php
+if (defined('SYNAPSE') && (SYNAPSE != 'unset')):
+   $synapseCreds = json_decode(SYNAPSE, true);
+?>
+{% endraw %}
+<blockquote>
+<p>Note: This is the connection information provided by Microsoft Azure Partner Center: </p>
 <ul>
-  <li>Synapse URL: 
-    <code class="highlighter-rouge"><?php echo 'your synapse host'; ?></code>
-    - the URL for your Synapse environment
+  <li><strong>Synapse Server</strong>: 
+    <code class="highlighter-rouge"><?php echo $synapseCreds['server']; ?></code>
+    &mdash; the server for your Synapse environment
   </li>
-  <li>Username: 
-    <code class="highlighter-rouge"><?php echo 'your synapse user'; ?></code>
+  <li><strong>SQL Pool</strong>: 
+    <code class="highlighter-rouge"><?php echo $synapseCreds['sqlpool']; ?></code>
+    &mdash; at present, this is the same as the server for your Synapse environment
   </li>
-  <li>Password: 
-    <code class="highlighter-rouge"><?php echo 'your_synapse_password'; ?></code>
+  <li><strong>Database</strong>: 
+    <code class="highlighter-rouge"><?php echo $synapseCreds['database']; ?></code>
+    &mdash; the database you want to use in this test 
   </li>
-  <li>Database: 
-    <code class="highlighter-rouge"><?php 'your synapse database'; ?></code>
-    - the database you want to use in this test. You may need to
-    create this in the Synapse console.
+  <li><strong>Port</strong>: 
+    <code class="highlighter-rouge"><?php echo $synapseCreds['port']; ?></code>
+    &mdash; the port your server is listening on
+  </li>
+  <li><strong>Username</strong>: 
+    <code class="highlighter-rouge"><?php echo $synapseCreds['username']; ?></code>
+    &mdash; the username you will use to access this database
+  </li>
+  <li><strong>Password</strong>: 
+    <code class="highlighter-rouge"><?php echo $synapseCreds['password']; ?></code>
+    &mdash; the password you selected when setting up this Azure Partner Center trial
   </li>
 </ul>
+</blockquote>
+{% raw %} 
+<?php endif; ?>
 {% endraw %}
