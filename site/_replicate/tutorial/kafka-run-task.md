@@ -61,7 +61,7 @@ If your messages were delivered as JSON payloads, then you can take the defaults
 
 ![Kafkdrop Image 5]({{ "/images/replicate/kafdrop-5.png" | prepend: base }}){: .center-image }
 
-In either case, you can move around the topic by changing the offset and pressing
+In either case, you can move around the topic by changing the `Offset` and pressing
 `View Messages`.
 
 ![Kafkdrop Image 6]({{ "/images/replicate/kafdrop-6.png" | prepend: base }}){: .center-image }
@@ -85,7 +85,7 @@ You just:
   (DML activity was going on in the background to simulate users working on the source database)
 * Automatically created kafka messages from the initial table state
 * Captured all new transactions which were happening while the initial load was running 
-* Turned ll net new data into Kafka messages
+* Turned all net new data into Kafka messages
 * Observed change data being recorded as it is sent to and applied at the  target 
 
 All that in 4 easy steps!

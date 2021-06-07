@@ -31,6 +31,7 @@ configure. If you are not sure at this point, a simple `Kafka Target` will do fi
 * Make sure the `Target` radio button is selected.
 * Select `Kafka` from the dropdown selection box.
 
+<br/>
 ### Configuring Replicate to Deliver JSON-Formatted Messages
 
 If you want to deliver messages in JSON format, follow these steps.
@@ -66,6 +67,7 @@ your connection succeeded.
 Assuming so, click `Save` and the configuration of your Kafka target endpoint is complete.
 Click `Close` to close the window.
 
+<br/>
 ### Configuring Replicate to Deliver Avro-Formatted Messages
 
 If you want to deliver messages in Avro format, follow these steps.
@@ -113,6 +115,7 @@ your connection succeeded.
 Assuming so, click `Save` and the configuration of your Kafka target endpoint is complete.
 Click `Close` to close the window.
 
+<br/>
 ### For More Detailed Information
 
 For more details about using Kafka as a target, please review the section 
