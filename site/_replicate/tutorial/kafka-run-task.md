@@ -25,11 +25,49 @@ If you would like to see some of the messages we are delivering to Kafka, click 
 <div id="kafkaurl" align="center" style="font-size:30px"></div>
 <script type="text/javascript">{% include getKafkaURL.js %}</script>
 
-This link will open another window that will display the next 200 messages we deliver to the
-**testdrive** topic using the Kafka "Console Consumer". As you look at the messages, you will notice
-that they are in JSON format, just as we configured the Replicate Kafka target endpoint.
+This link will open a tool that will allow you to browse the topics in the Kafka broker
+and display messages within those topics.
 
-![Kafka Show Image]({{ "/images/replicate/kafka-show.png" | prepend: base }}){: .center-image }
+![Kafkdrop Image 1]({{ "/images/replicate/kafdrop-1.png" | prepend: base }}){: .center-image }
+
+First you will need to log in:
+
+* User Name: `admin`
+* Password: {% include getPassword.php %}
+
+![Kafkdrop Image 2]({{ "/images/replicate/kafdrop-2.png" | prepend: base }}){: .center-image }
+
+On this screen, you get a hint as to why we renamed our target schemas. In this environment, we
+have delivered the same data from different tasks using both JSON- and Avro-formatted messages.
+Knowing which topics are which will be helpful as we browse message content.
+
+![Kafkdrop Image 3]({{ "/images/replicate/kafdrop-3.png" | prepend: base }}){: .center-image }
+
+As an example, select the `Player` topic (JSON or avro) depending on what you have
+configured and then select `View Messages`.
+
+Depending on the message format you selected, you may need to change the configuration
+settings in the message browser for the topic appropriately.
+
+![Kafkdrop Image 4a]({{ "/images/replicate/kafdrop-4a.png" | prepend: base }}){: .center-image }
+
+If your messages were delivered to the schema registry using Avro, then you will need to
+select `Avro` for the message format. If you opted to configure the key format as
+Avro as well, you will need to select the key format as Avro. Otherwise leave it as the default.
+
+![Kafkdrop Image 4j]({{ "/images/replicate/kafdrop-4j.png" | prepend: base }}){: .center-image }
+
+If your messages were delivered as JSON payloads, then you can take the defaults.
+
+![Kafkdrop Image 5]({{ "/images/replicate/kafdrop-5.png" | prepend: base }}){: .center-image }
+
+In either case, you can move around the topic by changing the offset and pressing
+`View Messages`.
+
+![Kafkdrop Image 6]({{ "/images/replicate/kafdrop-6.png" | prepend: base }}){: .center-image }
+
+You can expand a message to make it more readable by clicking on the 
+green badge beside each message.
 
 When you have seen enough, you can declare Victory! for this part of the Test Drive. Press `Stop`
 in the top left corner of the **Replicate** console to end the task. After pressing `Stop` and clicking 

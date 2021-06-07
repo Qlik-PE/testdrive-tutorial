@@ -8,7 +8,7 @@ onload = function getKafkaURL() {
     }
     var baseURL = url.substring(0, indx);
     var myurl = baseURL.substring(baseURL.indexOf(':')+1);
-    var myurl = "https:" + myurl + "/replicate/tutorial/kafka-show.php";
+    var myurl = "https:" + myurl + "/kafdrop";
 
     var res = "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"" 
                + myurl + "\">" + myurl + "<\a>";

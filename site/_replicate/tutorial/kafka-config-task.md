@@ -44,7 +44,8 @@ to the right of the endpoint when you highlight it.
 
 ![Kafka Task 3 Image]({{ "/images/replicate/kafka-task-3.png" | prepend: base }}){: .center-image }
 
-Repeat the same process for the Kafka JSON Target endpoint. Your screen should now look like this:
+Repeat the same process for the **Kafka-JSON** or **Kafka-Avro** target endpoint
+that you created in the previous step. Your screen should now look something like this:
 
 ![Kafka Task 4 Image]({{ "/images/replicate/kafka-task-4.png" | prepend: base }}){: .center-image }
 
@@ -85,8 +86,38 @@ at the bottom of the screen.
 refer to [Configure a Transformation]({{ base }}/replicate/tutorial/db-config-xform.php) for
 more information if you skipped it.
 
-
 ![Kafka Task 7 Image]({{ "/images/replicate/kafka-task-7.png" | prepend: base }}){: .center-image }
+
+In the event that you might choose to experiment with both JSON- and Avro-formatted messages,
+we will configure what Replicate calls a **Global Transformation** to rename the target
+schmea, which in the case of Kafka will rename the topics.
+
+![Kafka Task 7a Image]({{ "/images/replicate/kafka-task-7a.png" | prepend: base }}){: .center-image }
+
+Select `Global Transformations...` at the top of the screen.
+
+![Kafka Task 7b Image]({{ "/images/replicate/kafka-task-7b.png" | prepend: base }}){: .center-image }
+
+Give it a name if you wish, and select `Rename schema` and then press `Next`.
+
+![Kafka Task 7c Image]({{ "/images/replicate/kafka-task-7c.png" | prepend: base }}){: .center-image }
+
+By default, this screen says "apply this rule to any schema.table" combination. That is good
+enough for us in this case, so take the default and press `Next`.
+
+![Kafka Task 7d Image]({{ "/images/replicate/kafka-task-7d.png" | prepend: base }}){: .center-image }
+
+Here we are going to rename the schema from what it was called in the source database ("testdrive")
+to something that will help us remember the message format we selected ... so enter
+`json` or `avro` as appropriate here and then press `Next`.
+
+![Kafka Task 7e Image]({{ "/images/replicate/kafka-task-7e.png" | prepend: base }}){: .center-image }
+
+Here we see a summary of the transformation we are creating. You can press `Finish` now.
+
+![Kafka Task 7f Image]({{ "/images/replicate/kafka-task-7f.png" | prepend: base }}){: .center-image }
+
+From here you can press `OK` to return to the main screen.
 
 That completes configuration of the task. We are now ready to save our task and run it. 
 Press `Save` at the top left of the window and then press `Run`.
