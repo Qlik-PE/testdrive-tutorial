@@ -31,7 +31,7 @@ where -- in just a few hours time -- you will be guided through configuring:
 And of course, if you would like more information on any of our solutions, 
 or to experience our solutions in your environment
 with your data, feel free to let us know by clicking on 
-[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000j5hi){:target="_blank" rel="noopener noreferrer"} above.
+[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000001TGhu){:target="_blank" rel="noopener noreferrer"} above.
 
 ### About the Sample Data
 The sample data used in this tutorial comes from the
