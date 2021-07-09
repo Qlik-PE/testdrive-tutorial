@@ -7,11 +7,11 @@ permalink: /synapse/tutorial/config-adlsgen2.php
 
 The next step from a Replicate perspective is to create an Azure Synapse Analytics target endpoint.
 Replicate stages data by writing it to files in Azure storage.
-Before we can configure our Replicate target endpoint, however, we must be sure that our
+Before we can configure our Replicate target endpoint, we must be sure that our
 infrastructure on Azure is configured as needed to support this.
 
-First we need to set up the storage Replicate will use to map data into Azure Synapse Analytics. 
-For this tutorial we will use 2nd generataion Azure Data Lake Storage (ADLS-2) 
+First, we need to set up the storage Replicate will use to map data into Azure Synapse Analytics. 
+For this tutorial we will use 2nd generation Azure Data Lake Storage (ADLS-2) 
 to manage the external tables.
 
 #### Create an ADLS-2 Storage Account
@@ -26,7 +26,7 @@ and click `+ Create`:
 
 ![Azure ADLS Config 2 Image]({{ "/images/synapse/azure-adls2-config-2.png" | prepend: base }}){: .center-image }
 
-Select your subscripton and an existing resource group, or select `Create new` to create a new one.
+Select your subscription and an existing resource group or select `Create new` to create a new one.
 Next choose a name for your storage account and a location. For `Account kind` be sure that it says
 `StorageV2 (general purpose v2)`. The type of Replication does not matter for the tutorial, so
 take the default:
@@ -61,17 +61,17 @@ It will take Azure a few minutes to create your storage account.
 
 #### Create an Active Directory "App Registration"
 
-Now we need to create an Azure "App Registration" with appropriate permssions that Replicate
+Now we need to create an Azure "App Registration" with appropriate permissions that Replicate
 will use when writing data to ADLS-2 storage. From the Azure portal home page, click
-on `Azure Active Directory`.
+on `Azure Active Directory`;
 
 ![Azure ADLS Config 7 Image]({{ "/images/synapse/azure-adls2-config-7.png" | prepend: base }}){: .center-image }
 
-and click on `App registrations` on the left side of the screen.
+and click on `App registrations` on the left side of the screen;
 
 ![Azure ADLS Config 8 Image]({{ "/images/synapse/azure-adls2-config-8.png" | prepend: base }}){: .center-image }
 
-and from "App registrations" click `+ New registration`
+and from "App registrations" click `+ New registration`.
 
 ![Azure ADLS Config 9 Image]({{ "/images/synapse/azure-adls2-config-9.png" | prepend: base }}){: .center-image }
 
@@ -81,11 +81,11 @@ anything for the "Redirect URI". It is optional and not required in this case.
 ![Azure ADLS Config 10 Image]({{ "/images/synapse/azure-adls2-config-10.png" | prepend: base }}){: .center-image }
 
 Registration is almost immediate. Make note of the location of the 
-"Application (client) ID" and "DIrectory (tenant) ID" fields at the top of the page. 
+"Application (client) ID" and "Directory (tenant) ID" fields at the top of the page. 
 You will need this information later when configuring Replicate. 
 
 Next, we need to grant this application some basic permissions. Click on 
-`API permissions` on the left side of the page.
+`API permissions` on the left side of the page
 
 ![Azure ADLS Config 11 Image]({{ "/images/synapse/azure-adls2-config-11.png" | prepend: base }}){: .center-image }
 
@@ -100,7 +100,7 @@ From there, tic `user_impersonation` under  "Delegated permissions" and then pre
 ![Azure ADLS Config 13 Image]({{ "/images/synapse/azure-adls2-config-13.png" | prepend: base }}){: .center-image }
 
 Now we need to create a "secret" (essentially a password) for this API. Click on 
-`Certificates & secrets` on the left side of the screen.
+`Certificates & secrets` on the left side of the screen
 
 ![Azure ADLS Config 14 Image]({{ "/images/synapse/azure-adls2-config-14.png" | prepend: base }}){: .center-image }
 
@@ -108,12 +108,13 @@ and click on `+ New client secret`.
 
 ![Azure ADLS Config 15 Image]({{ "/images/synapse/azure-adls2-config-15.png" | prepend: base }}){: .center-image }
 
-Enter a descrpition, choose an expiration, and press `Add`.
+Enter a description, choose an expiration, and press `Add`.
 
 ![Azure ADLS Config 16 Image]({{ "/images/synapse/azure-adls2-config-16.png" | prepend: base }}){: .center-image }
 
 > **IMPORTANT NOTE**: you must save the value of the secret you created before you leave this
-page. You will not be able to retrieve it again later.
+page. You will not be able to retrieve it again later. You will need this secret later when 
+configuring Qlik Replicate.
 
 ![Azure ADLS Config 17 Image]({{ "/images/synapse/azure-adls2-config-17.png" | prepend: base }}){: .center-image }
 
@@ -124,8 +125,8 @@ account and do a couple of additional things. Use the breadcrumbs at the top of 
 to return to the Azure Portal home page and then drill in to get back to the 
 storage account we created.
 
-First, we need to create a "file system" for us to use for the tutorial. Select `Containers`
-on the left side of the storage account screen under the heading **Data Lake Storage**.
+First, we need to create a "file system" for Replicate to use. Select `Containers`
+on the left side of the storage account screen under the heading **Data Lake Storage**
 
 ![Azure ADLS Config 18 Image]({{ "/images/synapse/azure-adls2-config-18.png" | prepend: base }}){: .center-image }
 
@@ -137,12 +138,12 @@ Enter a name for the container and press `Create` to save it.
 
 ![Azure ADLS Config 20 Image]({{ "/images/synapse/azure-adls2-config-20.png" | prepend: base }}){: .center-image }
 
-As a final step, we need to grant access to the storage account to the "App" that we created / 
+As a final step, we need to grant access to the storage account to the "App" that we created and
 registered previously. Click on `Access control (IAM)` on the left side of the page.
 
 ![Azure ADLS Config 21 Image]({{ "/images/synapse/azure-adls2-config-21.png" | prepend: base }}){: .center-image }
 
-Click on "Add role assignments".
+Click on "Add role assignments"
 
 ![Azure ADLS Config 22 Image]({{ "/images/synapse/azure-adls2-config-22.png" | prepend: base }}){: .center-image }
 
@@ -173,7 +174,7 @@ using for this tutorial.
 
 ![Azure ADLS Config 25 Image]({{ "/images/synapse/azure-adls2-config-25.png" | prepend: base }}){: .center-image }
 
-Now click on `+ New Folder`.
+Now click on `+ New Folder`
 
 ![Azure ADLS Config 26 Image]({{ "/images/synapse/azure-adls2-config-26.png" | prepend: base }}){: .center-image }
 

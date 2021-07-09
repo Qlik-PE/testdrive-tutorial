@@ -53,6 +53,6 @@ Click `Close` to close the window.
 
 
 For more details about using MySQL as a source, please review the section
-"Using a MyQL-Based Database as a Source" in Chapter 8 "Adding and Managing Source Endpoints" of the
+"Using a MySQL-Based Database as a Source" in Chapter 8 "Adding and Managing Source Endpoints" of the
 [Qlik Replicate User Guide](/files/Qlik_Replicate_User_Guide.pdf){:target="_blank"}
 

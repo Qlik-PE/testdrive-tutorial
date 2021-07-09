@@ -28,7 +28,7 @@ close the MySQL-to-Synapse tab or click on the TASKS tab to return to the main w
 ![Run Task 4 Image]({{ "/images/synapse/run-task-4.png" | prepend: base }}){: .center-image }
 
 
-If you would like to explore the data that we have delviered to Azure Synapse, you
+If you would like to explore the data that we have delivered to Azure Synapse, you
 can view the tables in the Azure Synapse Studio.
 
 Select `Data` from the left side of the screen.

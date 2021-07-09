@@ -33,7 +33,7 @@ unable to access Replicate when you click on the link below, wait a couple of mi
 and try again.
 
 First things first, we need to open Qlik Replicate. Click the following link to open Replicate 
-in a new tab in your broswer. 
+in a new tab in your browser. 
 
 <div id="replurl" align="center" style="font-size:30px"></div>
 <script type="text/javascript">{% include getReplicateURL.js %}</script>

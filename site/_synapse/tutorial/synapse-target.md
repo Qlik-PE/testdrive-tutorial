@@ -5,10 +5,10 @@ tutorialtype: synapse
 permalink: /synapse/tutorial/synapse-target.php
 ---
 
-Now that we have our infrastructure ready to go
+Now that we have our infrastructure ready to go,
 we need to configure our Azure Synapse Analytics target endpoint. The process is much 
 the same as you saw with the MySQL source, and once again you will note that the 
-configuration process is context-sensitive as we move along. 
+configuration process is context sensitive as we move along. 
 
 As before, the first step in the configuration process is to tell Replicate that we want to 
 create a new endpoint. If you are back on the main window, you will need to click on 
@@ -16,7 +16,7 @@ create a new endpoint. If you are back on the main window, you will need to clic
 
 ![Manage Endpoints Image]({{ "/images/synapse/manage-endpoints.png" | prepend: base }}){: .center-image }
 
-and then press the `+ New Endpoint Connection` button.
+Press the `+ New Endpoint Connection` button
 
 
 ![Manage Endpoints Image]({{ "/images/synapse/add-new-endpoint-2.png" | prepend: base }}){: .center-image }
@@ -37,13 +37,13 @@ from the dropdown selection box.
 
 #### Azure Synapse Analytics Access Configuration 
 
-Before we get started, you will first need to override the ODBC driver name on the **Advanced**
-tab on the configuration screen.
+Before we get started, you may first need to override the ODBC driver name on the **Advanced**
+tab on the configuration screen as shown below.
 
 
 ![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-odbc-config.png" | prepend: base }}){: .center-image }
 
-Next we need to configure the connection to our Microsoft Azure Synapse Analytics database.
+Next, we need to configure the connection to our Microsoft Azure Synapse Analytics database.
 
 ![Synapse Azure Server Config Image]({{ "/images/synapse/synapse-azure-server-config.png" | prepend: base }}){: .center-image }
 
@@ -52,7 +52,7 @@ Next we need to configure the connection to our Microsoft Azure Synapse Analytic
 Fill in the blanks with information pertaining to your Microsoft Azure Synapse Analytics instance.
 
 * **Server name**: The name of the *Dedicated SQL endpoint* for your Azure Synapse Analytics instance.
-Qlik Replicate does not support acessing the "Serverless SQL endpont".
+Qlik Replicate does not support accessing the "Serverless SQL endpoint".
 * **Authentication method**: `SQL Authentication`. *Active Directory Authentication* is not 
 supported from Linux-based hosts.
 * **Port**: the port number that your Azure Synapse instance is listening on. The default is `1433`.
@@ -66,7 +66,7 @@ support accessing the Serverless SQL endpoint which obviously also includes the 
 Serverless SQL Pool.
 * During a replication task, Microsoft Azure Synapse Analytics authenticates itself to the
 external data source using an SQL Server Credential. You can either configure Replicate to
-create the Credential automatically during runtime (the default) or use an existing Credential. 
+create the credential automatically during run time (the default) or use an existing Credential. 
 In this tutorial, we are going to manually configure a credential for Qlik Replicate to use.
   - Launch the Synapse Studio from the Azure Portal
 ![Synapse Azure ODBC Config Image]({{ "/images/synapse/synapse-azure-launch-studio.png" | prepend: base }}){: .center-image }
@@ -86,7 +86,7 @@ that we created above.
 #### Azure Storage Configuration 
 
 To optimize delivery into the Azure Synapse Analytics environment, Replicate delivers change data in a
-continual series of microbatches that are staged for bulk ingest. You will need to configure the 
+continuous series of micro-batches that are staged for bulk ingest. You will need to configure the 
 Microsoft Azure Synapse Analytics on Azure endpoint to stage the data 
 files in storage provided by your Azure account.
 
@@ -110,8 +110,11 @@ in the previous 'Configure Azure Data Lake Gen2 Storage' section.
 * **File System**: the ADLS Gen2 Container containing your folders and files
 * **Azure Active Directory ID**: specify your Azure Active Directory (tenant) ID 
 * **Azure Active Directory application ID**: specify the Azure Active Directory application (client) ID
-* **Azure Active Directory application key**: specify the Azure Active Directory application (client) key
-* **Access key**: the storage account access key
+* **Azure Active Directory application key**: specify the Azure Active Directory 
+application (client) key. This is the secret key you created when you registered your "app" with
+Active Directory.
+* **Access key**: the storage account access key. Access keys can be found under "Access Keys" 
+in the settings for your storage account.
 * **Target folder**: the folder where we want Replicate to create the data files on ADLS
    > Note: if you specify a folder that does not exist, Replicate will create it for you. You
     may also press `Browse` to find directories in your file system that you may choose from. If 

@@ -39,7 +39,7 @@ type `WSTRING(100)` into the **type** column.
 ![Transform 5a Image]({{ "/images/synapse/xform-5a.png" | prepend: base }}){: .center-image }
 
 Now we need to define the transformation we want to use to populate the column. Click on `fx` to
-bring up the trasformation **Expression Builder**.
+bring up the transformation **Expression Builder**.
 
 ![Transform 6 Image]({{ "/images/synapse/xform-6.png" | prepend: base }}){: .center-image }
 
