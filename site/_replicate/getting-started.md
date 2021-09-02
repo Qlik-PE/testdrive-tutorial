@@ -5,8 +5,7 @@ tutorialtype: replicate
 permalink: /replicate/getting-started/getting-started.php
 ---
 
-Thank you for giving the Qlik Replicate (formerly Attunity Replicate) Test Drive a go. 
-By following the steps outlined in 
+Thank you for giving the Qlik Replicate Test Drive a go.  By following the steps outlined in 
 this tutorial, you will build out two use cases.
 
 {% include figure.html url='/images/replicate/use-cases-db.png' description='Database-to-Database Replication' %}

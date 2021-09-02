@@ -12,7 +12,7 @@ effort is spent writing ETL (Extract-Transform-Load) code to create data marts
 that are used for reporting.  Additionally, even more energy is expended
 amending the ETL code as the business and warehouse change over time. 
 
-Qlik Compose for Data Warehouses (formerly Attunity Compose) automates the time-consuming
+Qlik Compose for Data Warehouses automates the time-consuming
 tasks of building and maintaining data warehouses and data marts. It’s
 model-driven approach generates the necessary artifacts and ETL scripts to
 automatically manage your entire data warehouse lifecycle. As a result,

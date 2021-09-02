@@ -5,8 +5,7 @@ tutorialtype: snowflake
 permalink: /snowflake/getting-started/getting-started.php
 ---
 
-This test drive will demonstrate how to use Qlik Replicate (formerly Attunity Replicate)
-to ingest and 
+This test drive will demonstrate how to use Qlik Replicate to ingest and 
 deliver data in real-time to your Snowflake environment. Follow the step-by-step 
 tutorial to quickly load sample data from a MySQL database into your Snowflake 
 data warehouse, then watch as data updates happen in real time.
