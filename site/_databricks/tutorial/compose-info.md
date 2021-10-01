@@ -104,5 +104,5 @@ and how it flows through the data lake pipeline.
 
 Although Qlik Compose for Data Lakes is not available for hands-on use in this test
 drive we are happy to offer a personalized demonstration upon request. Use the
-[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000jSeg){:target="_blank" rel="noopener noreferrer"}
+[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?marketoAPIReason=19Q2_PCM_DI_GBL_ContactUsReplicateTestDrive_2452){:target="_blank" rel="noopener noreferrer"} 
 form to schedule your Compose demo, ask questions, or send feedback.

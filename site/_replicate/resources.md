@@ -14,7 +14,9 @@ The product documentation can be found at:
 [Qlik Replicate User Guide](/files/Qlik_Replicate_User_Guide.pdf){:target="_blank"}
 
 And of course, if you would like more information, or to experience our solutions in your environment
-with your data, feel free to let us know by clicking on [Contact us](https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000ivTR){:target="_blank" rel="noopener noreferrer"} above.
+with your data, feel free to let us know by clicking on 
+[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?marketoAPIReason=19Q2_PCM_DI_GBL_ContactUsReplicateTestDrive_2452){:target="_blank" rel="noopener noreferrer"} 
+above.
 
 Keep your eyes out for more test drives in the future!
 

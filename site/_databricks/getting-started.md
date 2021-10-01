@@ -30,7 +30,7 @@ data that is updated on every Compose task run.
 {% include figure.html url='/images/databricks/mysql-to-delta-lake.png' description='Database-to-Delta-Lake Replication' %}
 
 If this sceniario is of interest to you, use the 
-[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000jSeg){:target="_blank" rel="noopener noreferrer"}
+[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?marketoAPIReason=19Q2_PCM_DI_GBL_ContactUsReplicateTestDrive_2452){:target="_blank" rel="noopener noreferrer"} 
 link to arrange a customized trial using your data.
 
 

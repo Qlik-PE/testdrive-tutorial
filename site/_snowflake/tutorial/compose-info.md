@@ -97,5 +97,5 @@ change management and documentation generation.
 
 Although Qlik Compose for Data Warehouses is not activated in this test
 drive we are happy to offer a personalized demonstration upon request. Use the
-[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000j5hi){:target="_blank" rel="noopener noreferrer"}
+[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?marketoAPIReason=19Q2_PCM_DI_GBL_ContactUsReplicateTestDrive_2452){:target="_blank" rel="noopener noreferrer"} 
 form to schedule your Compose demo, ask questions, or send feedback.

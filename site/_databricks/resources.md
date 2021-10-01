@@ -30,7 +30,8 @@ where -- in just a few hours time -- you will be guided through configuring:
 
 And of course, if you would like more information, or to experience our solutions in your environment
 with your data, feel free to let us know by clicking on 
-[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?campaignid=7013z000000jSeg){:target="_blank" rel="noopener noreferrer"} above.
+[Contact us](https://www.qlik.com/us/try-or-buy/buy-now?marketoAPIReason=19Q2_PCM_DI_GBL_ContactUsReplicateTestDrive_2452){:target="_blank" rel="noopener noreferrer"} 
+above.
 
 ### About the Sample Data
 The sample data used in this tutorial comes from the
