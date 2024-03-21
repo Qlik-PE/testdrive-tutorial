@@ -1,9 +1,9 @@
 {% raw %} 
+<div markdown="0">
 <?php
 if (defined('SYNAPSE') && (SYNAPSE != 'unset')):
    $synapseCreds = json_decode(SYNAPSE, true);
 ?>
-{% endraw %}
 <blockquote>
 <p>Note: This is the connection information provided by Microsoft Azure Partner Center: </p>
 <ul>
@@ -33,6 +33,6 @@ if (defined('SYNAPSE') && (SYNAPSE != 'unset')):
   </li>
 </ul>
 </blockquote>
-{% raw %} 
 <?php endif; ?>
+</div>
 {% endraw %}
