@@ -7,7 +7,7 @@ build: html
 html:
 	rm -rf $(jekyll_trg)/*
 	jekyll build --source $(jekyll_src) --destination $(jekyll_trg) --trace
-	fix-markdown-php.sh generated
+	fix-markdown-php.sh $(jekyll_trg)
 
 install: build
 	sudo rm -rf /var/www/html/*
