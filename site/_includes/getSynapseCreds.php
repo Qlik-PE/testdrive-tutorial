@@ -1,5 +1,4 @@
 {% raw %} 
-<div markdown="0">
 <?php
 if (defined('SYNAPSE') && (SYNAPSE != 'unset')):
    $synapseCreds = json_decode(SYNAPSE, true);
@@ -34,5 +33,4 @@ if (defined('SYNAPSE') && (SYNAPSE != 'unset')):
 </ul>
 </blockquote>
 <?php endif; ?>
-</div>
 {% endraw %}

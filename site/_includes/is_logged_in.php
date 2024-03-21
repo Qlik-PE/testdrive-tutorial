@@ -1,5 +1,4 @@
 {% raw %}
-<div markdown="0">
 <?php
 session_start();
 $userinfo = $_SERVER['DOCUMENT_ROOT'] . "/../userinfo.php"; 
@@ -29,5 +28,4 @@ if ($_SESSION['loggedin']) {
     header('Location: /login.html');
 }
 ?>
-</div>
 {% endraw %}

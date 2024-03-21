@@ -13,8 +13,7 @@ see the data is in JSON format as we configured in the Replicate task.
 
 <td>
    <div style="height:400px; background-color: #e9e9e9; overflow:auto; color:black; font-size:15px; font-family:'Courier New',monospace">
-{% raw %}
-<div markdown="0">
+      {% raw %}
       <?php
          $kafkaopts="export KAFKA_OPTS='-XX:-AssumeMP'";
          $cmd="/opt/kafka*/bin/kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list kafka:29092 --topic testdrive";
@@ -35,8 +34,7 @@ see the data is in JSON format as we configured in the Replicate task.
          }
          pclose($handle);
       ?>
-</div>
-{% endraw %}
+      {% endraw %}
    </div>
 </td>
 <br>

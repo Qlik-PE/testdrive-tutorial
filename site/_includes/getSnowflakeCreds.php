@@ -1,5 +1,4 @@
 {% raw %} 
-<div markdown="0">
 <ul>
   <li>Snowflake URL: 
     <code class="highlighter-rouge"><?php echo $sfcreds['host']; ?></code>
@@ -22,5 +21,4 @@
     create this in the Snowflake console.
   </li>
 </ul>
-</div>
 {% endraw %}

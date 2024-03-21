@@ -37,8 +37,8 @@ in a new tab in your broswer.
 <div id="replurl" align="center" style="font-size:30px"></div>
 <script type="text/javascript">{% include getReplicateURL.js %}</script>
 
-and then log in when requested and click `OK`. The **User Name** is `admin` and 
-the **Password** is {% include getPassword.php %}.
+and then log in when requested and click `OK`. The **User Name** is
+`admin` and the **Password** is {% include getPassword.php %}.
 
 ![Replicate Login Image]({{ "/images/snowflake/login.png" | prepend: base }}){: .center-image }
 
